@@ -1,0 +1,50 @@
+@page "/Auth"
+@inject NavigationManager Navigation
+
+
+<PageTitle>Authentication</PageTitle>
+
+
+<h1>Authenticate Yourself!</h1>
+
+
+<div>
+   <label for="username">Username:</label>
+   <input type="text" id="username" @bind="username" />
+
+
+   <label for="password">Password:</label>
+   <input type="password" id="password" @bind="password" />
+
+
+   <button class="btn btn-primary" @onclick="AuthenticateUser">Login</button>
+</div>
+
+
+<p role="status">@authMessage</p>
+
+
+@code {
+   private string username = string.Empty;
+   private string password = string.Empty;
+   private string authMessage = string.Empty;
+
+
+   private void AuthenticateUser()
+   {
+       if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+       {
+           authMessage = "Please enter both username and password.";
+       }
+       else if (username == "user" && password == "password")
+       {
+           // Simulate successful authentication
+           authMessage = "Authentication successful"; // Display message briefly before navigating
+           Navigation.NavigateTo("/CreatePost");
+       }
+       else
+       {
+           authMessage = "STOP HACKING MY SYSTEM";
+       }
+   }
+}

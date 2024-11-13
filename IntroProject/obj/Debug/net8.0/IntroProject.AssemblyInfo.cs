@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IntroProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc29fbebdd6d2abfb8441015af33488f6b3b036d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eae1b5c507c00900ff185f08ac0e51c5d0f98998")]
 [assembly: System.Reflection.AssemblyProductAttribute("IntroProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IntroProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

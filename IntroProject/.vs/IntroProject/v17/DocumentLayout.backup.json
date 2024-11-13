@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0C97A7EB-9C19-4527-BA2A-9005854EEF35}|IntroProject.csproj|c:\\users\\aaron\\source\\repos\\comp-49x-24-25-gtrit-prism-intro-project\\introproject\\introproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0C97A7EB-9C19-4527-BA2A-9005854EEF35}|IntroProject.csproj|solutionrelative:introproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C97A7EB-9C19-4527-BA2A-9005854EEF35}|IntroProject.csproj|c:\\users\\aaron\\source\\repos\\comp-49x-24-25-gtrit-prism-intro-project\\introproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C97A7EB-9C19-4527-BA2A-9005854EEF35}|IntroProject.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IntroProject.csproj",
+              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
+              "RelativeDocumentMoniker": "IntroProject.csproj",
+              "ToolTip": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
+              "RelativeToolTip": "IntroProject.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-13T19:05:28.68Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -22,6 +44,18 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T18:55:34.035Z"
             }
           ]
         }

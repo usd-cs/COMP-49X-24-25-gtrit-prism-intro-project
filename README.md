@@ -1,10 +1,10 @@
-#Basic Web Forum
+# Basic Web Forum
 
-Project Overview
+## Project Overview
 
 This project is a basic web forum where users can post and reply to messages. The forum ensures that only logged-in users can create posts and comments, while only admins have the ability to delete posts and comments. All users can view posts and comments. Posts and comments are text-only, and user passwords are securely encrypted and salted.
 
-Non-Functional Requirements
+### Non-Functional Requirements
 
     Only logged-in users can create posts/comments.
     Only admins can delete posts/comments.
@@ -12,7 +12,7 @@ Non-Functional Requirements
     Posts/comments contain only text.
     Passwords are encrypted and salted.
 
-User Stories
+### User Stories
 
     As a user, I want to be able to create a new post so that I can express my original thoughts/feelings.
     As a user, I want to be able to comment on a post so I can add to an existing discussion.

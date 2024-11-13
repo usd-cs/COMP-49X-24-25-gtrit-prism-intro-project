@@ -50,18 +50,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/source/repos/COMP-49X-24-25-gtrit-prism-intro-project/IntroProject/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/aaron/source/repos/COMP-49X-24-25-gtrit-prism-intro-project/IntroProject/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/aaron/source/repos/COMP-49X-24-25-gtrit-prism-intro-project/IntroProject/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/aaron/source/repos/COMP-49X-24-25-gtrit-prism-intro-project/IntroProject/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -73,11 +61,3 @@ build_metadata.AdditionalFiles.CssScope = b-i4vsrwcyri
 [C:/Users/aaron/source/repos/COMP-49X-24-25-gtrit-prism-intro-project/IntroProject/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-mp3nxd1dps
-
-[C:/Users/aaron/source/repos/COMP-49X-24-25-gtrit-prism-intro-project/IntroProject/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-85himtksr1
-
-[C:/Users/aaron/source/repos/COMP-49X-24-25-gtrit-prism-intro-project/IntroProject/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-n0u0wkzllu

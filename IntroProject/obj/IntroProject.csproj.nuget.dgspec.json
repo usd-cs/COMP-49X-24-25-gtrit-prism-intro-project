@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tinaung/Documents/Senior Project 24-25/Intro Project/IntroProject/IntroProject.csproj": {}
+    "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj": {}
   },
   "projects": {
-    "/Users/tinaung/Documents/Senior Project 24-25/Intro Project/IntroProject/IntroProject.csproj": {
+    "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tinaung/Documents/Senior Project 24-25/Intro Project/IntroProject/IntroProject.csproj",
+        "projectUniqueName": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
         "projectName": "IntroProject",
-        "projectPath": "/Users/tinaung/Documents/Senior Project 24-25/Intro Project/IntroProject/IntroProject.csproj",
-        "packagesPath": "/Users/tinaung/.nuget/packages/",
-        "outputPath": "/Users/tinaung/Documents/Senior Project 24-25/Intro Project/IntroProject/obj/",
+        "projectPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
+        "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tinaung/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\aaron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -87,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

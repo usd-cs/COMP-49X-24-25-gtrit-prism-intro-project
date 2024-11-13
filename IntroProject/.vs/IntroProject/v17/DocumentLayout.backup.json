@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0C97A7EB-9C19-4527-BA2A-9005854EEF35}|IntroProject.csproj|c:\\users\\aaron\\source\\repos\\comp-49x-24-25-gtrit-prism-intro-project\\introproject\\components\\pages\\userpages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0C97A7EB-9C19-4527-BA2A-9005854EEF35}|IntroProject.csproj|solutionrelative:components\\pages\\userpages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0C97A7EB-9C19-4527-BA2A-9005854EEF35}|IntroProject.csproj|c:\\users\\aaron\\source\\repos\\comp-49x-24-25-gtrit-prism-intro-project\\introproject\\components\\pages\\postpages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0C97A7EB-9C19-4527-BA2A-9005854EEF35}|IntroProject.csproj|solutionrelative:components\\pages\\postpages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -48,6 +52,19 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Create.razor",
+              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Components\\Pages\\UserPages\\Create.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\UserPages\\Create.razor",
+              "ToolTip": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Components\\Pages\\UserPages\\Create.razor",
+              "RelativeToolTip": "Components\\Pages\\UserPages\\Create.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T18:46:29.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.razor",
               "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Components\\Pages\\PostPages\\Create.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\PostPages\\Create.razor",
               "ToolTip": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Components\\Pages\\PostPages\\Create.razor",
@@ -59,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Create.razor",
               "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Components\\Pages\\CommentPages\\Create.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\CommentPages\\Create.razor",
@@ -72,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "Models\\Comment.cs",
@@ -85,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Post.cs",
               "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Models\\Post.cs",
               "RelativeDocumentMoniker": "Models\\Post.cs",
@@ -98,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",

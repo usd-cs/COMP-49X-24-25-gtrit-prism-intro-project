@@ -1,50 +1,64 @@
 @page "/Auth"
 @inject NavigationManager Navigation
-
+@inject IntroProject.Data.IntroProjectContext DbContext
+@using Microsoft.EntityFrameworkCore
 
 <PageTitle>Authentication</PageTitle>
 
-
 <h1>Authenticate Yourself!</h1>
-
 
 <div>
    <label for="username">Username:</label>
    <input type="text" id="username" @bind="username" />
 
-
    <label for="password">Password:</label>
    <input type="password" id="password" @bind="password" />
-
 
    <button class="btn btn-primary" @onclick="AuthenticateUser">Login</button>
 </div>
 
-
 <p role="status">@authMessage</p>
-
 
 @code {
    private string username = string.Empty;
    private string password = string.Empty;
    private string authMessage = string.Empty;
 
-
-   private void AuthenticateUser()
+   private async Task AuthenticateUser()
    {
+       authMessage = ""; // Reset the message
+       Console.WriteLine($"Attempting to authenticate: {username}");
+
        if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
        {
            authMessage = "Please enter both username and password.";
+           return;
        }
-       else if (username == "user" && password == "password")
+
+       try
        {
-           // Simulate successful authentication
-           authMessage = "Authentication successful"; // Display message briefly before navigating
-           Navigation.NavigateTo("/CreatePost");
+           var user = await DbContext.User
+               .FirstOrDefaultAsync(u => u.Name == username && u.Password == password);
+
+           if (user != null)
+           {
+               Console.WriteLine($"User found: {user.Name}");
+               authMessage = "Authentication successful.";
+               await Task.Delay(500); // Briefly show success message
+               Navigation.NavigateTo("/CreatePost");
+           }
+           else
+           {
+               Console.WriteLine("User not found.");
+               authMessage = "Invalid username or password.";
+           }
        }
-       else
+       catch (Exception ex)
        {
-           authMessage = "STOP HACKING MY SYSTEM";
+           Console.WriteLine($"Error during authentication: {ex.Message}");
+           authMessage = "An error occurred during authentication.";
        }
    }
 }
+
+

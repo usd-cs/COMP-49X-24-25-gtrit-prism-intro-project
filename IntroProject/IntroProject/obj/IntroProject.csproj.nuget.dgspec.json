@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj": {}
+    "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject\\IntroProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj": {
+    "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject\\IntroProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
+        "projectUniqueName": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject\\IntroProject.csproj",
         "projectName": "IntroProject",
-        "projectPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
+        "projectPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject\\IntroProject.csproj",
         "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\",
+        "outputPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aaron\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,30 +45,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
-            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[8.0.6, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

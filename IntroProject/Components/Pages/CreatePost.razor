@@ -1,0 +1,65 @@
+@page "/CreatePost"
+
+
+<PageTitle>Create a Post</PageTitle>
+
+
+<h1>Manage Your Post</h1>
+
+
+<div>
+   <label for="postContent">Post Content:</label>
+   <textarea id="postContent" @bind="postContent" rows="5" cols="50"></textarea>
+</div>
+
+
+<div>
+   <button class="btn btn-primary" @onclick="OnCreatePost">Create Post</button>
+   <button class="btn btn-secondary" @onclick="OnEditPost" disabled="@(!isPostCreated)">Edit Post</button>
+   <button class="btn btn-danger" @onclick="OnDeletePost" disabled="@(!isPostCreated)">Delete Post</button>
+</div>
+
+
+<p role="status">@postMessage</p>
+
+
+@code {
+   private string postContent = string.Empty;
+   private string postMessage = string.Empty;
+   private bool isPostCreated = false;
+
+
+   private void OnCreatePost()
+   {
+       if (string.IsNullOrWhiteSpace(postContent))
+       {
+           postMessage = "Please enter content for your post.";
+       }
+       else
+       {
+           postMessage = "Post created successfully!";
+           isPostCreated = true;
+       }
+   }
+
+
+   private void OnEditPost()
+   {
+       if (string.IsNullOrWhiteSpace(postContent))
+       {
+           postMessage = "Please enter content to update your post.";
+       }
+       else
+       {
+           postMessage = "Post updated successfully!";
+       }
+   }
+
+
+   private void OnDeletePost()
+   {
+       postContent = string.Empty;
+       postMessage = "Post deleted successfully!";
+       isPostCreated = false;
+   }
+}

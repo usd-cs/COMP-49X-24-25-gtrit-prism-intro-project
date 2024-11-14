@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj": {}
+    "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj": {
+    "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
+        "projectUniqueName": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
         "projectName": "IntroProject",
-        "projectPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
+        "projectPath": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
         "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\",
+        "outputPath": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aaron\\AppData\\Roaming\\NuGet\\NuGet.Config",

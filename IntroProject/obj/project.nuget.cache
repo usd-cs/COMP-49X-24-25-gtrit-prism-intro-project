@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W73L3TIpBzo=",
+  "dgSpecHash": "W9MhvaDqEmM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
+  "projectFilePath": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\IntroProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aaron\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\aaron\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

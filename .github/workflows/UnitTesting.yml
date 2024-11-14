@@ -24,10 +24,10 @@ jobs:
           dotnet-version: '8.0.403' 
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ./IntroProject.Tests/IntroProject.Tests.csproj
 
-      - name: Build solution
-        run: dotnet build --no-restore --configuration Release
+      - name: Build
+        run: dotnet build --configuration Release ./IntroProject.Tests/IntroProject.Tests.csproj
 
       - name: Run unit tests
-        run: dotnet test --no-build --configuration Release --verbosity normal
+        run: dotnet test --no-build --configuration Release --verbosity normal ./IntroProject.Tests/IntroProject.Tests.csproj

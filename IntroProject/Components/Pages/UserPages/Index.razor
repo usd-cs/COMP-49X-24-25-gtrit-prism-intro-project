@@ -17,7 +17,7 @@
 <QuickGrid Class="table" Items="context.User">
     <PropertyColumn Property="user => user.Name" />
     <PropertyColumn Property="user => user.Email" />
-    <PropertyColumn Property="user => user.Password" />
+    <PropertyColumn Property="user => user.Password" Title="Encrypted Password" />
     <PropertyColumn Property="user => user.Admin" />
     <PropertyColumn Property="user => user.User_id" />
 
@@ -31,10 +31,17 @@
 @code {
     private IntroProjectContext context = default!;
 
+
+
     protected override void OnInitialized()
+
     {
+
         context = DbFactory.CreateDbContext();
+
     }
+
+
 
     public async ValueTask DisposeAsync() => await context.DisposeAsync();
 }

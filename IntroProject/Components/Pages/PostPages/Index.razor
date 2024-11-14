@@ -14,25 +14,98 @@
     <a href="posts/create">Create New</a>
 </p>
 
-<QuickGrid Class="table" Items="context.Post">
-    <PropertyColumn Property="post => post.Contents" />
-    <PropertyColumn Property="post => post.User_id" />
-    <PropertyColumn Property="post => post.Post_id" />
-
-    <TemplateColumn Context="post">
-        <a href="@($"posts/edit?post_id={post.Post_id}")">Edit</a> |
-        <a href="@($"posts/details?post_id={post.Post_id}")">Details</a> |
-        <a href="@($"posts/delete?post_id={post.Post_id}")">Delete</a>
-    </TemplateColumn>
-</QuickGrid>
+<div class="posts-container">
+    @foreach (var post in posts)
+    {
+        <div class="post-box">
+            <div class="post-section">
+                <h2>Poster</h2>
+                <p>@post.User?.Name</p> <!-- Display user name -->
+            </div>
+            <div class="post-section">
+                <h2>Post Contents</h2>
+                <p>@post.Contents</p>
+            </div>
+            <div class="post-section">
+                <h2>User ID</h2>
+                <p>@post.User_id</p>
+            </div>
+            <div class="post-section">
+                <h2>Post ID</h2>
+                <p>@post.Post_id</p>
+            </div>
+            <div class="post-actions">
+                <a href="@($"posts/edit?post_id={post.Post_id}")">Edit</a> |
+                <a href="@($"posts/details?post_id={post.Post_id}")">Details</a> |
+                <a href="@($"posts/delete?post_id={post.Post_id}")">Delete</a>
+            </div>
+        </div>
+    }
+</div>
 
 @code {
     private IntroProjectContext context = default!;
+    private List<Post> posts = new();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        context = DbFactory.CreateDbContext();
+        context = await DbFactory.CreateDbContextAsync();
+        posts = await context.Post.Include(p => p.User).ToListAsync(); // Load posts with User entity
     }
 
-    public async ValueTask DisposeAsync() => await context.DisposeAsync();
+    public async ValueTask DisposeAsync()
+    {
+        await context.DisposeAsync();
+    }
 }
+
+<style>
+    .posts-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .post-box {
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-section {
+        margin-bottom: 10px;
+    }
+
+    .post-section h2 {
+        margin: 0 0 5px 0;
+        font-size: 1.1em;
+        color: #444;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+    }
+
+    .post-section p {
+        margin: 0;
+        font-size: 1em;
+        color: #666;
+    }
+
+    .post-actions {
+        margin-top: 15px;
+        text-align: right;
+    }
+
+    .post-actions a {
+        margin-left: 10px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .post-actions a:hover {
+        text-decoration: underline;
+    }
+</style>

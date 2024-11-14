@@ -15,6 +15,7 @@
 </p>
 
 <QuickGrid Class="table" Items="context.Comment">
+    <PropertyColumn Property="comment => comment.Post" />
     <PropertyColumn Property="comment => comment.Contents" />
     <PropertyColumn Property="comment => comment.User_id" />
     <PropertyColumn Property="comment => comment.Post_id" />

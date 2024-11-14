@@ -19,6 +19,7 @@
     <PropertyColumn Property="user => user.Email" />
     <PropertyColumn Property="user => user.Password" />
     <PropertyColumn Property="user => user.Admin" />
+    <PropertyColumn Property="user => user.User_id" />
 
     <TemplateColumn Context="user">
         <a href="@($"users/edit?user_id={user.User_id}")">Edit</a> |

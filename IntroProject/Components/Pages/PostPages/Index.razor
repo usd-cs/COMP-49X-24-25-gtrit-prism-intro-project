@@ -17,6 +17,7 @@
 <QuickGrid Class="table" Items="context.Post">
     <PropertyColumn Property="post => post.Contents" />
     <PropertyColumn Property="post => post.User_id" />
+    <PropertyColumn Property="post => post.Post_id" />
 
     <TemplateColumn Context="post">
         <a href="@($"posts/edit?post_id={post.Post_id}")">Edit</a> |

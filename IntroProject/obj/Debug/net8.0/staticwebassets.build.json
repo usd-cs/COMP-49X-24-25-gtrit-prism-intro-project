@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dHSQL8zbaiF/6SdLY9EkP+lXAYXuattD1oFnT4CpcAs=",
+  "Hash": "JeyrdAawU8zxLXiG1RUJoy2IIFw+9PZxx1xpGzBp/bw=",
   "Source": "IntroProject",
   "BasePath": "_content/IntroProject",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/tinaung/.nuget/packages/microsoft.aspnetcore.components.quickgrid/8.0.10/staticwebassets/QuickGrid.razor.js"
+    },
+    {
+      "Identity": "/Users/tinaung/.nuget/packages/microsoft.aspnetcore.components.webassembly.authentication/8.0.10/staticwebassets/AuthenticationService.js",
+      "SourceId": "Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/tinaung/.nuget/packages/microsoft.aspnetcore.components.webassembly.authentication/8.0.10/staticwebassets/",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+      "RelativePath": "AuthenticationService.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/tinaung/.nuget/packages/microsoft.aspnetcore.components.webassembly.authentication/8.0.10/staticwebassets/AuthenticationService.js"
     },
     {
       "Identity": "/Users/tinaung/Documents/Senior Project 24-25/Intro Project/COMP-49X-24-25-gtrit-prism-intro-project/IntroProject/obj/Debug/net8.0/scopedcss/bundle/IntroProject.styles.css",

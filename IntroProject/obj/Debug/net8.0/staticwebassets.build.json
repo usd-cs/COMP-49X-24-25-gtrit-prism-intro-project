@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XsAnL6S/EmtB+5j3N/tnFtQ0aulV8DeXw+FhQyEaB2M=",
+  "Hash": "Wh2R5Gt/ddeWG3fkd2xpm1VYkJyP/NbIqV5nAMqe+Ys=",
   "Source": "IntroProject",
   "BasePath": "_content/IntroProject",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "IntroProject\\wwwroot",
       "Source": "IntroProject",
-      "ContentRoot": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
       "BasePath": "_content/IntroProject",
       "Pattern": "**"
     }
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "C:\\Users\\aaron\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.10\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\IntroProject.styles.css",
+      "Identity": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\IntroProject.styles.css",
       "SourceId": "IntroProject",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/IntroProject",
       "RelativePath": "IntroProject.styles.css",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\IntroProject.styles.css"
+      "OriginalItemSpec": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\IntroProject.styles.css"
     },
     {
-      "Identity": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\IntroProject.bundle.scp.css",
+      "Identity": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\IntroProject.bundle.scp.css",
       "SourceId": "IntroProject",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/IntroProject",
       "RelativePath": "IntroProject.bundle.scp.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\IntroProject.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\IntroProject.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\app.css",
       "SourceId": "IntroProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
       "BasePath": "_content/IntroProject",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "IntroProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
       "BasePath": "_content/IntroProject",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "IntroProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
       "BasePath": "_content/IntroProject",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\favicon.png",
       "SourceId": "IntroProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aaron\\source\\repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aaron\\Source\\Repos\\COMP-49X-24-25-gtrit-prism-intro-project\\IntroProject\\wwwroot\\",
       "BasePath": "_content/IntroProject",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

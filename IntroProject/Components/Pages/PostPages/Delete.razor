@@ -1,0 +1,59 @@
+﻿@page "/posts/delete"
+@using Microsoft.EntityFrameworkCore
+@using IntroProject.Models
+@inject IDbContextFactory<IntroProject.Data.ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Delete</PageTitle>
+
+<h1>Delete</h1>
+
+<p>Are you sure you want to delete this?</p>
+<div>
+    <h2>Post</h2>
+    <hr />
+    @if (post is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">Contents</dt>
+            <dd class="col-sm-10">@post.Contents</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">User_id</dt>
+            <dd class="col-sm-10">@post.User_id</dd>
+        </dl>
+        <EditForm method="post" Model="post" OnValidSubmit="DeletePost" FormName="delete" Enhance>
+            <button type="submit" class="btn btn-danger" disabled="@(post is null)">Delete</button> |
+            <a href="/posts">Back to List</a>
+        </EditForm>
+    }
+</div>
+
+@code {
+    private Post? post;
+
+    [SupplyParameterFromQuery]
+    private int Post_id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        post = await context.Post.FirstOrDefaultAsync(m => m.Post_id == Post_id);
+
+        if (post is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+
+    private async Task DeletePost()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Post.Remove(post!);
+        await context.SaveChangesAsync();
+        NavigationManager.NavigateTo("/posts");
+    }
+}

@@ -1,0 +1,99 @@
+﻿@page "/comments/edit"
+@using Microsoft.EntityFrameworkCore
+@using IntroProject.Models
+@inject IDbContextFactory<IntroProject.Data.ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Edit</PageTitle>
+
+<h1>Edit</h1>
+
+<h2>Comment</h2>
+<hr />
+@if (Comment is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm method="post" Model="Comment" OnValidSubmit="UpdateComment" FormName="edit" Enhance>
+                <DataAnnotationsValidator />
+                <ValidationSummary role="alert"/>
+                <input type="hidden" name="Comment.Comment_id" value="@Comment.Comment_id" />
+                <div class="mb-3">
+                    <label for="contents" class="form-label">Contents:</label>
+                    <InputText id="contents" @bind-Value="Comment.Contents" class="form-control" />
+                    <ValidationMessage For="() => Comment.Contents" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="user_id" class="form-label">User_id:</label>
+                    <InputNumber id="user_id" @bind-Value="Comment.User_id" class="form-control" />
+                    <ValidationMessage For="() => Comment.User_id" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="post_id" class="form-label">Post_id:</label>
+                    <InputNumber id="post_id" @bind-Value="Comment.Post_id" class="form-control" />
+                    <ValidationMessage For="() => Comment.Post_id" class="text-danger" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="/comments">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromQuery]
+    private int Comment_id { get; set; }
+
+    [SupplyParameterFromForm]
+    private Comment? Comment { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        Comment ??= await context.Comment.FirstOrDefaultAsync(m => m.Comment_id == Comment_id);
+
+        if (Comment is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more information, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task UpdateComment()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Attach(Comment!).State = EntityState.Modified;
+
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!CommentExists(Comment!.Comment_id))
+            {
+                NavigationManager.NavigateTo("notfound");
+            }
+            else
+            {
+                throw;
+            }
+        }
+
+        NavigationManager.NavigateTo("/comments");
+    }
+
+    private bool CommentExists(int comment_id)
+    {
+        using var context = DbFactory.CreateDbContext();
+        return context.Comment.Any(e => e.Comment_id == comment_id);
+    }
+}

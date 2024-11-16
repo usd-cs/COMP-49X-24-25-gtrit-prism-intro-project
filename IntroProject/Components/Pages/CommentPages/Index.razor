@@ -1,0 +1,38 @@
+﻿@page "/comments"
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using IntroProject.Models
+@using IntroProject.Data
+@implements IAsyncDisposable
+@inject IDbContextFactory<IntroProject.Data.ApplicationDbContext> DbFactory
+
+<PageTitle>Index</PageTitle>
+
+<h1>Index</h1>
+
+<p>
+    <a href="comments/create">Create New</a>
+</p>
+
+<QuickGrid Class="table" Items="context.Comment">
+    <PropertyColumn Property="comment => comment.Contents" />
+    <PropertyColumn Property="comment => comment.User_id" />
+    <PropertyColumn Property="comment => comment.Post_id" />
+
+    <TemplateColumn Context="comment">
+        <a href="@($"comments/edit?comment_id={comment.Comment_id}")">Edit</a> |
+        <a href="@($"comments/details?comment_id={comment.Comment_id}")">Details</a> |
+        <a href="@($"comments/delete?comment_id={comment.Comment_id}")">Delete</a>
+    </TemplateColumn>
+</QuickGrid>
+
+@code {
+    private ApplicationDbContext context = default!;
+
+    protected override void OnInitialized()
+    {
+        context = DbFactory.CreateDbContext();
+    }
+
+    public async ValueTask DisposeAsync() => await context.DisposeAsync();
+}

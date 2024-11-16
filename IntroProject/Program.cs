@@ -45,7 +45,16 @@ builder.Services.AddDbContextFactory<WebForumDbContext>(options =>
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentityCore<ApplicationUser>(options =>
+{
+    // Default Lockout settings.
+    options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequireDigit = false; // Require at least one digit
+    options.Password.RequiredLength = 8; // Minimum length of 8 characters
+    options.Password.RequireNonAlphanumeric = false; // No need for non-alphanumeric characters
+    options.Password.RequireUppercase = false; // Require at least one uppercase letter
+    options.Password.RequireLowercase = false; // Require at least one lowercase letter
+})
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();

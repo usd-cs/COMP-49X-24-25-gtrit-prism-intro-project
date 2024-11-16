@@ -37,6 +37,12 @@ var webForumConnectionString = builder.Configuration.GetConnectionString("Postgr
 builder.Services.AddDbContext<WebForumDbContext>(options =>
     options.UseNpgsql(webForumConnectionString));
 
+
+// Register IDbContextFactory for WebForumDbContext
+builder.Services.AddDbContextFactory<WebForumDbContext>(options =>
+    options.UseNpgsql(webForumConnectionString), ServiceLifetime.Transient);
+
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)

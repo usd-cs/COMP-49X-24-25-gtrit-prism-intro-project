@@ -1,0 +1,94 @@
+﻿@page "/posts/edit"
+@using Microsoft.EntityFrameworkCore
+@using IntroProject.Models
+@inject IDbContextFactory<IntroProject.Data.WebForumDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Edit</PageTitle>
+
+<h1>Edit</h1>
+
+<h2>Post</h2>
+<hr />
+@if (Post is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm method="post" Model="Post" OnValidSubmit="UpdatePost" FormName="edit" Enhance>
+                <DataAnnotationsValidator />
+                <ValidationSummary role="alert"/>
+                <input type="hidden" name="Post.Post_id" value="@Post.Post_id" />
+                <div class="mb-3">
+                    <label for="contents" class="form-label">Contents:</label>
+                    <InputText id="contents" @bind-Value="Post.Contents" class="form-control" />
+                    <ValidationMessage For="() => Post.Contents" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="user_id" class="form-label">User_id:</label>
+                    <InputNumber id="user_id" @bind-Value="Post.User_id" class="form-control" />
+                    <ValidationMessage For="() => Post.User_id" class="text-danger" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="/posts">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromQuery]
+    private int Post_id { get; set; }
+
+    [SupplyParameterFromForm]
+    private Post? Post { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        Post ??= await context.Post.FirstOrDefaultAsync(m => m.Post_id == Post_id);
+
+        if (Post is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more information, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task UpdatePost()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Attach(Post!).State = EntityState.Modified;
+
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!PostExists(Post!.Post_id))
+            {
+                NavigationManager.NavigateTo("notfound");
+            }
+            else
+            {
+                throw;
+            }
+        }
+
+        NavigationManager.NavigateTo("/posts");
+    }
+
+    private bool PostExists(int post_id)
+    {
+        using var context = DbFactory.CreateDbContext();
+        return context.Post.Any(e => e.Post_id == post_id);
+    }
+}

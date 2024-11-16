@@ -1,9 +1,10 @@
 ﻿@page "/posts/create"
+@using Microsoft.AspNetCore.Authorization
 @using Microsoft.EntityFrameworkCore
 @using IntroProject.Models
 @inject IDbContextFactory<IntroProject.Data.WebForumDbContext> DbFactory
 @inject NavigationManager NavigationManager
-
+@attribute [Authorize]
 <PageTitle>Create</PageTitle>
 
 <h1>Create</h1>

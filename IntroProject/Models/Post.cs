@@ -12,5 +12,8 @@ namespace IntroProject.Models
         [ForeignKey("User_id")]
         public User? User { get; set; }
 
+        //One post can have many comments
+        public ICollection<Comment>? Comments { get; set; }
+
     }
 }

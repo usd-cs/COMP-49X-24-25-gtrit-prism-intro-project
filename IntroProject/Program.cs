@@ -32,7 +32,7 @@ builder.Services.AddQuickGridEntityFrameworkAdapter();
 
 //PostgreSQL connection string  
 
-var webForumDbconnectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'webForumDbconnectionString' not found.");
+var webForumDbconnectionString = builder.Configuration.GetConnectionString("PostgresConnection") ?? throw new InvalidOperationException("Connection string 'PostgresConnection' not found.");
 
 builder.Services.AddDbContext<WebForumDbContext>(options =>
     options.UseNpgsql(connectionString));

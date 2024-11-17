@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using IntroProject.Models;
 
 namespace IntroProject.Data
 {

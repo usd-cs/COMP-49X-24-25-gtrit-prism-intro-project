@@ -42,6 +42,12 @@
                 <label for="confirm-password">Confirm Password</label>
                 <ValidationMessage For="() => Input.ConfirmPassword" class="text-danger" />
             </div>
+            <div class="form-group">
+                <label>
+                    <InputCheckbox @bind-Value="Input.Admin" />
+                    Admin
+                </label>
+            </div>
             <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </EditForm>
     </div>
@@ -69,6 +75,9 @@
     {
         var user = CreateUser();
 
+        // Set the Admin property
+        user.Admin = Input.Admin;
+        
         await UserStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
         var emailStore = GetEmailStore();
         await emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -141,5 +150,9 @@
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; } = "";
+
+        [Required]
+        public Boolean Admin { get; set; } = false;
+
     }
 }

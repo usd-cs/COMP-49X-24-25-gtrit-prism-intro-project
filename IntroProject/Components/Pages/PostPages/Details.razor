@@ -1,0 +1,48 @@
+﻿@page "/posts/details"
+@using Microsoft.EntityFrameworkCore
+@using IntroProject.Models
+@inject IDbContextFactory<IntroProject.Data.ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h2>Post</h2>
+    <hr />
+    @if (post is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">Contents</dt>
+            <dd class="col-sm-10">@post.Contents</dd>
+            <dt class="col-sm-2">Id</dt>
+            <dd class="col-sm-10">@post.Id</dd>
+        </dl>
+        <div>
+            <a href="@($"/posts/edit?post_id={post.Post_id}")">Edit</a> |
+            <a href="@($"/posts")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    private Post? post;
+
+    [SupplyParameterFromQuery]
+    private int Post_id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        post = await context.Posts.FirstOrDefaultAsync(m => m.Post_id == Post_id);
+
+        if (post is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}

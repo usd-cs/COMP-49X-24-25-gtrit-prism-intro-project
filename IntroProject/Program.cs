@@ -24,11 +24,36 @@ builder.Services.AddAuthentication(options =>
     .AddIdentityCookies();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+//PostgreSQL connection string  
+
+//var webForumConnectionString = builder.Configuration.GetConnectionString("PostgresConnection") ?? throw new InvalidOperationException("Connection string 'PostgresConnection' not found.");
+
+//builder.Services.AddDbContext<WebForumDbContext>(options =>
+//    options.UseNpgsql(webForumConnectionString));
+
+
+//// Register IDbContextFactory for WebForumDbContext
+//builder.Services.AddDbContextFactory<WebForumDbContext>(options =>
+//    options.UseNpgsql(webForumConnectionString), ServiceLifetime.Transient);
+
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentityCore<ApplicationUser>(options =>
+{
+    // Default Lockout settings.
+    options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequireDigit = false; // Require at least one digit
+    options.Password.RequiredLength = 8; // Minimum length of 8 characters
+    options.Password.RequireNonAlphanumeric = false; // No need for non-alphanumeric characters
+    options.Password.RequireUppercase = false; // Require at least one uppercase letter
+    options.Password.RequireLowercase = false; // Require at least one lowercase letter
+})
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();
@@ -47,6 +72,7 @@ else
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+    app.UseMigrationsEndPoint();
 }
 
 app.UseHttpsRedirection();

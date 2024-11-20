@@ -97,3 +97,4 @@ ipch/
 # TFS 2012 Local Workspace
 $tf/
 /IntroProject/.vscode
+/IntroProject/Migrations/ApplicationDb

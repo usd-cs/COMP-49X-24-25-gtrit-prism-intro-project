@@ -1,8 +1,10 @@
 ﻿@page "/users/create"
+@using Microsoft.AspNetCore.Authorization
 @using Microsoft.EntityFrameworkCore
 @using IntroProject.Models
 @inject IDbContextFactory<IntroProject.Data.WebForumDbContext> DbFactory
 @inject NavigationManager NavigationManager
+@attribute [Authorize(Roles="Admin")]
 
 <PageTitle>Create</PageTitle>
 

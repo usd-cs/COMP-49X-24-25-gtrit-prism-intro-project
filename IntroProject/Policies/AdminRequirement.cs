@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using System.Threading.Tasks;
-using System.Security.Claims;
 
 namespace IntroProject.Policies;
 
-    public class AdminRequirement : IAuthorizationRequirement
+public class AdminRequirement : IAuthorizationRequirement
 {
     public class AdminAuthorizationHandler : AuthorizationHandler<AdminRequirement>
     {

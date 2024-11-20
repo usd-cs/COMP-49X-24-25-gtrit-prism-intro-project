@@ -55,6 +55,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options =>
     options.Password.RequireUppercase = false; // Require at least one uppercase letter
     options.Password.RequireLowercase = false; // Require at least one lowercase letter
 })
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();

@@ -13,6 +13,6 @@ namespace IntroProject.Data
         }
         public DbSet<Comment> Comments { get; set; } = default!;
         public DbSet<Post> Posts { get; set; } = default!;
-        public DbSet<IdentityUser> User { get; set; } = default!;
+        public DbSet<ApplicationUser> User { get; set; } = default!;
     }
 }

@@ -4,6 +4,7 @@ using IntroProject.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
+builder.Services.AddDbContextFactory<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString), ServiceLifetime.Transient);
+
 //PostgreSQL connection string  
 
 //var webForumConnectionString = builder.Configuration.GetConnectionString("PostgresConnection") ?? throw new InvalidOperationException("Connection string 'PostgresConnection' not found.");
@@ -39,6 +43,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //// Register IDbContextFactory for WebForumDbContext
 //builder.Services.AddDbContextFactory<WebForumDbContext>(options =>
 //    options.UseNpgsql(webForumConnectionString), ServiceLifetime.Transient);
+
+builder.Services.AddQuickGridEntityFrameworkAdapter();
 
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();

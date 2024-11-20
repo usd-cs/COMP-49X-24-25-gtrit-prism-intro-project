@@ -1,8 +1,10 @@
 ﻿@page "/posts/delete"
+@using Microsoft.AspNetCore.Authorization
 @using Microsoft.EntityFrameworkCore
 @using IntroProject.Models
 @inject IDbContextFactory<IntroProject.Data.ApplicationDbContext> DbFactory
 @inject NavigationManager NavigationManager
+@attribute [Authorize(Roles="Admin")]
 
 <PageTitle>Delete</PageTitle>
 

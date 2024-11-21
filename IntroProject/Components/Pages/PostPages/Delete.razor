@@ -1,10 +1,8 @@
 ﻿@page "/posts/delete"
-@using Microsoft.AspNetCore.Authorization
 @using Microsoft.EntityFrameworkCore
 @using IntroProject.Models
 @inject IDbContextFactory<IntroProject.Data.ApplicationDbContext> DbFactory
 @inject NavigationManager NavigationManager
-@attribute [Authorize(Roles="Admin")]
 
 <PageTitle>Delete</PageTitle>
 
@@ -24,8 +22,8 @@
             <dd class="col-sm-10">@post.Contents</dd>
         </dl>
         <dl class="row">
-            <dt class="col-sm-2">Id</dt>
-            <dd class="col-sm-10">@post.Id</dd>
+            <dt class="col-sm-2">UserId</dt>
+            <dd class="col-sm-10">@post.UserId</dd>
         </dl>
         <EditForm method="post" Model="post" OnValidSubmit="DeletePost" FormName="delete" Enhance>
             <button type="submit" class="btn btn-danger" disabled="@(post is null)">Delete</button> |

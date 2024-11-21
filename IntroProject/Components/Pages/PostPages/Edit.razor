@@ -28,9 +28,9 @@ else
                     <ValidationMessage For="() => Post.Contents" class="text-danger" />
                 </div>
                 <div class="mb-3">
-                    <label for="id" class="form-label">Id:</label>
-                    <InputText id="id" @bind-Value="Post.Id" class="form-control" />
-                    <ValidationMessage For="() => Post.Id" class="text-danger" />
+                    <label for="userid" class="form-label">UserId:</label>
+                    <InputText id="userid" @bind-Value="Post.UserId" class="form-control" />
+                    <ValidationMessage For="() => Post.UserId" class="text-danger" />
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>
             </EditForm>

@@ -17,27 +17,30 @@
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
             </NavLink>
         </div>
-
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="auth">
-                <span class="bi bi-lock-nav-menu" aria-hidden="true"></span> Auth Required
+            <NavLink class="nav-link" href="/wfposts">
+                <span class="bi bi-calculator-fill-nav-menu" aria-hidden="true"></span> List Posts
             </NavLink>
         </div>
 
         <AuthorizeView>
+            <!-- Add Pages here that require authorization to view -->
             <Authorized>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="/wfposts/create" Match="NavLinkMatch.All">
+                        <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Create Post
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="/wfcomments" Match="NavLinkMatch.All">
+                        <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Add Comment
+                    </NavLink>
+                </div>
+
+
+
+
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="Account/Manage">
                         <span class="bi bi-person-fill-nav-menu" aria-hidden="true"></span> @context.User.Identity?.Name
@@ -89,4 +92,6 @@
         NavigationManager.LocationChanged -= OnLocationChanged;
     }
 }
+
+
 

@@ -1,11 +1,12 @@
 ﻿using IntroProject.Data;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IntroProject.Models
 {
     public class WFPost
     {
-        public int PostId { get; set; }
+        [Key] public int PostId { get; set; }
 
         public string? UserId { get; set; }
 

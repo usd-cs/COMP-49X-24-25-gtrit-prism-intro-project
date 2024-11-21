@@ -1,0 +1,50 @@
+﻿@page "/wfposts/create"
+@using IntroProject.Data
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.EntityFrameworkCore
+@using IntroProject.Models
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@attribute [Authorize]
+
+<h3>Create A New Post</h3>
+
+<EditForm Model="@WFPost" OnValidSubmit="@AddWFPost" FormName="CreatePostForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="Content">Content:</label>
+        <InputTextArea id="Content" class="form-control" @bind-Value="@WFPost.Content" />
+        <ValidationMessage For="@(() => WFPost.Content)" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</EditForm>
+
+<a href="/wfposts">Back to List</a>
+
+@code {
+    private WFPost WFPost { get; set; } = new();
+
+    private async Task AddWFPost()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            WFPost.UserId = user.FindFirst(c => c.Type == "sub")?.Value;
+        }
+
+        if (string.IsNullOrWhiteSpace(WFPost.Content))
+        {
+            WFPost.Content = "No Content Added";
+        }
+
+        using var context = DbFactory.CreateDbContext();
+        context.Posts.Add(WFPost);
+        await context.SaveChangesAsync();
+        NavigationManager.NavigateTo("/wfposts");
+    }
+}

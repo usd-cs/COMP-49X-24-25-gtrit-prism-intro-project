@@ -1,0 +1,48 @@
+﻿@page "/wfposts/details"
+@using Microsoft.EntityFrameworkCore
+@using IntroProject.Models
+@inject IDbContextFactory<IntroProject.Data.ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h2>WFPost</h2>
+    <hr />
+    @if (wfpost is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">UserId</dt>
+            <dd class="col-sm-10">@wfpost.UserId</dd>
+            <dt class="col-sm-2">Content</dt>
+            <dd class="col-sm-10">@wfpost.Content</dd>
+        </dl>
+        <div>
+            <a href="@($"/wfposts/edit?postid={wfpost.PostId}")">Edit</a> |
+            <a href="@($"/wfposts")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    private WFPost? wfpost;
+
+    [SupplyParameterFromQuery]
+    private int PostId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        wfpost = await context.Posts.FirstOrDefaultAsync(m => m.PostId == PostId);
+
+        if (wfpost is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}

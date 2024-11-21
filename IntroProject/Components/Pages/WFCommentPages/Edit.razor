@@ -1,0 +1,99 @@
+﻿@page "/wfcomments/edit"
+@using Microsoft.EntityFrameworkCore
+@using IntroProject.Models
+@inject IDbContextFactory<IntroProject.Data.ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Edit</PageTitle>
+
+<h1>Edit</h1>
+
+<h2>WFComment</h2>
+<hr />
+@if (WFComment is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm method="post" Model="WFComment" OnValidSubmit="UpdateWFComment" FormName="edit" Enhance>
+                <DataAnnotationsValidator />
+                <ValidationSummary role="alert"/>
+                <input type="hidden" name="WFComment.CommentId" value="@WFComment.CommentId" />
+                <div class="mb-3">
+                    <label for="postid" class="form-label">PostId:</label>
+                    <InputNumber id="postid" @bind-Value="WFComment.PostId" class="form-control" />
+                    <ValidationMessage For="() => WFComment.PostId" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="userid" class="form-label">UserId:</label>
+                    <InputText id="userid" @bind-Value="WFComment.UserId" class="form-control" />
+                    <ValidationMessage For="() => WFComment.UserId" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Content:</label>
+                    <InputText id="content" @bind-Value="WFComment.Content" class="form-control" />
+                    <ValidationMessage For="() => WFComment.Content" class="text-danger" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="/wfcomments">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromQuery]
+    private int CommentId { get; set; }
+
+    [SupplyParameterFromForm]
+    private WFComment? WFComment { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        WFComment ??= await context.Comments.FirstOrDefaultAsync(m => m.CommentId == CommentId);
+
+        if (WFComment is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more information, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task UpdateWFComment()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Attach(WFComment!).State = EntityState.Modified;
+
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!WFCommentExists(WFComment!.CommentId))
+            {
+                NavigationManager.NavigateTo("notfound");
+            }
+            else
+            {
+                throw;
+            }
+        }
+
+        NavigationManager.NavigateTo("/wfcomments");
+    }
+
+    private bool WFCommentExists(int commentid)
+    {
+        using var context = DbFactory.CreateDbContext();
+        return context.Comments.Any(e => e.CommentId == commentid);
+    }
+}

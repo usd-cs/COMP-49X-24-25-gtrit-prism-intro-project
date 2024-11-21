@@ -1,0 +1,54 @@
+﻿@page "/wfcomments/create"
+@using Microsoft.EntityFrameworkCore
+@using IntroProject.Models
+@inject IDbContextFactory<IntroProject.Data.ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create</PageTitle>
+
+<h1>Create</h1>
+
+<h2>WFComment</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="WFComment" OnValidSubmit="AddWFComment" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" role="alert"/>
+            <div class="mb-3">
+                <label for="postid" class="form-label">PostId:</label> 
+                <InputNumber id="postid" @bind-Value="WFComment.PostId" class="form-control" /> 
+                <ValidationMessage For="() => WFComment.PostId" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="userid" class="form-label">UserId:</label> 
+                <InputText id="userid" @bind-Value="WFComment.UserId" class="form-control" /> 
+                <ValidationMessage For="() => WFComment.UserId" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="content" class="form-label">Content:</label> 
+                <InputText id="content" @bind-Value="WFComment.Content" class="form-control" /> 
+                <ValidationMessage For="() => WFComment.Content" class="text-danger" /> 
+            </div>        
+            <button type="submit" class="btn btn-primary">Create</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/wfcomments">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private WFComment WFComment { get; set; } = new();
+
+    // To protect from overposting attacks, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task AddWFComment()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Comments.Add(WFComment);
+        await context.SaveChangesAsync();
+        NavigationManager.NavigateTo("/wfcomments");
+    }
+}
